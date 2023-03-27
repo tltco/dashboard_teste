@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!---------------------- MATERIAL ICONS GOOGLE ---------------------->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div id="app">
+        <!-------------------------- SIDE BAR DA DIREITA -------------------------->
+        <nav class="sidebar" id="sidebar">
+            <div class="img" href="./index.html">
+                <img src="./assets/img/brand-logo.png" alt="brand" class="brand">
+                <img src="assets/img/avatar.png" alt="avatar" class="avatar">
+            </div>
+            <div class="sidebar__menu" id="sidebar-active">
+                <button class="menu__link active">
+                    <span class="material-symbols-rounded">dashboard</span>
+                    <span>Dashboard</span>
+                </button>
+                <button class="menu__link">
+                    <span class="material-symbols-rounded">calendar_month</span>
+                    <span>Agenda</span>
+                </button>
+                <button class="menu__link">
+                    <span class="material-symbols-rounded">electric_bolt</span>
+                    <span>Atividades</span>
+                </button>
+                <button class="menu__link">
+                    <span class="material-symbols-rounded">contacts</span>
+                    <span>Contatos</span>
+                </button>
+                <button class="menu__link">
+                    <span class="material-symbols-rounded">widgets</span>
+                    <span>Utilidades</span>
+                </button>
+            </div>
+            <div class="sidebar__menu">
+                <button class="menu__link" id="theme">
+                    <div class="toggle__container" id="switch">
+                        <div class="toggle__switch">
+                            <span class="material-symbols-rounded" id="theme-icon">clear_night</span>
+                        </div>
+                    </div>
+                    <span id="theme-description">Tema Escuro</span>
+                </button>
+                <button class="menu__link" id="config">
+                    <span class="material-symbols-rounded">settings</span>
+                    <span>Configurações</span>
+                </button>
+                <div class="config__dropdown" id="config__dropdown">
+                    <button class="dropdown__btn">
+                        <span class="material-symbols-rounded">
+                            chevron_right
+                        </span>
+                        Perfil
+                    </button>
+                    <button class="dropdown__btn">
+                        <span class="material-symbols-rounded">
+                            chevron_right
+                        </span>
+                        Conta
+                    </button>
+                    <button class="dropdown__btn">
+                        <span class="material-symbols-rounded">
+                            chevron_right
+                        </span>
+                        Termos
+                    </button>
+                </div>
+                <button class="menu__link" id="support">
+                    <span class="material-symbols-rounded">help</span>
+                    <span>Suporte</span>
+                </button>
+                <div class="support__dropdown" id="support__dropdown">
+                    <button class="dropdown__btn">
+                        <span class="material-symbols-rounded">
+                            chevron_right
+                        </span>
+                        Sobre
+                    </button>
+                    <button class="dropdown__btn">
+                        <span class="material-symbols-rounded">
+                            chevron_right
+                        </span>
+                        Ajuda
+                    </button>
+                    <button class="dropdown__btn">
+                        <span class="material-symbols-rounded">
+                            chevron_right
+                        </span>
+                        Feedback
+                    </button>
+                </div>
+                <button class="menu__link">
+                    <span class="material-symbols-rounded">logout</span>
+                    <span>Sair</span>
+                </button>
+            </div>
+            <div class="carousel">
+                <img src="./assets/img/publi0.jpg" alt="..." id="slider" class="ads">
+                <div class="pagination">
+                    <div class="pagination__dots active"></div>
+                    <div class="pagination__dots"></div>
+                    <div class="pagination__dots"></div>
+                </div>
+            </div>
+        </nav>
+        <main class="main__container">
+            <!-------------------------- TOPBAR / BARRA DE PESQUISA -------------------------->
+            <div class="top__bar">
+                <h1 class="brand__wordmark">Senac</h1>
+                <div class="search">
+                    <img src="./assets/img/i-search.png" class="search__ico">
+                    <input type="search" id="search" placeholder="Procurar">
+                </div>
+                <div class="date">
+                    <span class="material-symbols-rounded time__ico">
+                        schedule
+                    </span>
+                    <p class="time" id="time">
+                        <!-- JS ESCREVE A DATA AUTOMATICAMENTE -->
+                    </p>
+                </div>
+                <div class="user__nav">
+                    <div class="notifications" id="notifications">
+                        <span class="material-symbols-rounded no-fill">
+                            notifications
+                        </span>
+                        <div class="dropdown" id="notifications__dropdown">
+                            <button class="dropdown__btn">notificação</button>
+                            <button class="dropdown__btn">notificação</button>
+                            <button class="dropdown__btn">notificação</button>
+                            <button class="dropdown__btn__cta">Ver Mais</button>
+                        </div>
+                        <span class="status" id="notifications__status"></span>
+                    </div>
+                    <div class="profile__sm" id="profile">
+                        <img src="./assets/img/avatar.png" class="avatar__sm">
+                        <div class="dropdown" id="profile__dropdown">
+                            <button class="dropdown__btn">Meu Perfil</button>
+                            <button class="dropdown__btn">Meus Contatos</button>
+                            <button class="dropdown__btn">Lixeira</button>
+                            <button class="dropdown__btn">Ajustes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-------------------------- HERO E WORKSTATION-------------------------->
+            <div class="station__container">
+                <div class="station__wrapper">
+                    <div class="hero">
+                        <div class="updates">
+                            <h3>Bem vindo de volta, Renisson!</h3>
+                            <span class="updates__label">
+                                <div class="bullet__point"></div>
+                                <p>1 novo evento foi adicionado</p>
+                            </span>
+                            <span class="updates__label">
+                                <div class="bullet__point"></div>
+                                <p>1 evento ativo</p>
+                            </span>
+                            <span class="updates__label">
+                                <div class="bullet__point"></div>
+                                <p>2 tarefas</p>
+                            </span>
+                        </div>
+                        <div class="tabs" id="tabs">
+                            <button class="tab__1">
+                                <p>UC6</p>
+                                <h3>Técnico de Informática</h3>
+                            </button>
+                            <button class="tab__2">
+                                <p>UC5</p>
+                                <h3>Programação Web</h3>
+                            </button>
+                            <button class="tab__3">
+                                <p>UC3</p>
+                                <h3>T. Banco de Dados</h3>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="station__header">
+                        <div class="station__workbar">
+                            <div class="station__tabs" id="station-tabs">
+                                <button class="station__tab active" onclick="switchScreen('overview')">
+                                    <span>Visão Geral</span>
+                                </button>
+                                <button class="station__tab" onclick="aulasDoDia(new Date().getDate())">
+                                    <span>Agenda</span>
+                                </button>
+                                <button class="station__tab" onclick="switchScreen('scholar')">
+                                    <span>Acadêmico</span>
+                                </button>
+                                <button class="station__tab" onclick="switchScreen('tools')">
+                                    <span>Utilidades</span>
+                                </button>
+                            </div>
+                            <div class="station__tabs">
+                                <button class="station__tab" onclick="professorOn.editar()">
+                                    <span>+ Editar</span>
+                                </button>
+                                <div id="view">
+                                    <button class="station__tab">
+                                        <span>
+                                            Diário
+                                            <span class="material-symbols-rounded">
+                                                keyboard_arrow_down
+                                            </span>
+                                        </span>
+                                    </button>
+                                    <div class="dropdown" id="view__dropdown">
+                                        <button class="dropdown__btn">
+                                            Semana
+                                        </button>
+                                        <button class="dropdown__btn">
+                                            Mês
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="station__content" id="station-content">
+                        <!-- AQUI VAI FUNCIONAR AS PÁGINAS -->
+                    </div>
+                </div>
+                <!-- -----------------------------FOCUS BAR---------------------------- -->
+                <div class="focus__bar">
+                    <span class="card__btn">
+                        <button>Adicionar</button>
+                    </span>
+                    <div class="card">
+                        <div class="card__title">
+                            <h4>Calendário</h4>
+                        </div>
+                        <div class="calendar__wrapper">
+                            <div class="calendar__nav">
+                                <div class="current__date__group">
+                                    <span class="material-symbols-rounded">
+                                        calendar_today
+                                    </span>
+                                    <p class="current-date"></p>
+                                </div>
+                                <div class="nav__ico__wrapper">
+                                    <span id="prev" class="material-symbols-rounded">chevron_left</span>
+                                    <span id="next" class="material-symbols-rounded">chevron_right</span>
+                                </div>
+                            </div>
+                            <div class="calendar">
+                                <ul class="calendar__weeks">
+                                    <li>D</li>
+                                    <li>S</li>
+                                    <li>T</li>
+                                    <li>Q</li>
+                                    <li>Q</li>
+                                    <li>S</li>
+                                    <li>S</li>
+                                </ul>
+                                <ul class="calendar__days"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__title">
+                            <h4>Lembretes</h4>
+                            <div class="edit__card">
+                                <p>ver todos</p>
+                            </div>
+                        </div>
+                        <div class="card__sticky">
+                            <div class="description">
+                                <p class="reminder__title">
+                                    Apresentação
+                                </p>
+                                <p class="reminder__details">
+                                    Auditório
+                                </p>
+                                <p class="reminder__details">
+                                    <span class="material-symbols-rounded agenda">
+                                        calendar_month
+                                    </span>
+                                    2 Abril — ás 20:00 hrs
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card__sticky">
+                            <div class="description">
+                                <p class="reminder__title">
+                                    &#127876; Natal &#127876;
+                                </p>
+                                <p class="reminder__details">
+                                    Faltam 282 dias, 10 hrs, 36 minutos e 04 segundos para o Natal!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__title">
+                            <h4>Tarefas</h4>
+                            <div class="edit__card">
+                                <p>ver todos</p>
+                            </div>
+                        </div>
+                        <div class="card__sticky">
+                            <input type="checkbox" class="checkbox">
+                            <div class="description">
+                                <p class="reminder__title">
+                                    Atualizar Cronograma
+                                </p>
+                                <p class="reminder__details">
+                                    <span class="material-symbols-rounded agenda">
+                                        calendar_month
+                                    </span>
+                                    2 Abril — ás 08:00 hrs
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card__sticky">
+                            <input type="checkbox" class="checkbox">
+                            <div class="description">
+                                <p class="reminder__title">
+                                    Reunião
+                                </p>
+                                <p class="reminder__details">
+                                    <span class="material-symbols-rounded agenda">
+                                        calendar_month
+                                    </span>
+                                    Agora
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__title">
+                            <h4>Contatos</h4>
+                            <div class="contacts__mini">
+                                <img src="./assets/img/avatar-2.png" alt="">
+                                <img src="./assets/img/avatar-6.png" alt="">
+                                <img src="./assets/img/avatar-7.png" alt="">
+                                <button class="add__contacts">
+                                    <span class="material-symbols-rounded">
+                                        add
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <span class="card__btn">
+                            <button>Mensagem</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <p class="footer__label">
+                    Desenvolvido por Manoel, Melissa e Talita ©2023
+                </p>
+            </footer>
+        </main>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
